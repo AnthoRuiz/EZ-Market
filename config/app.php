@@ -147,14 +147,15 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        Dingo\Api\Provider\LaravelServiceProvider::class,
 
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        market\Providers\AppServiceProvider::class,
+        market\Providers\AuthServiceProvider::class,
+        market\Providers\EventServiceProvider::class,
+        market\Providers\RouteServiceProvider::class,
 
     ],
 

@@ -11,11 +11,27 @@
 |
 */
 
-$factory->define(App\User::class, function (Faker\Generator $faker) {
+$factory->define(market\User::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->name,
         'email' => $faker->safeEmail,
         'password' => bcrypt(str_random(10)),
         'remember_token' => str_random(10),
+    ];
+});
+
+$factory->define(market\Product::class, function (Faker\Generator $faker) {
+    return [
+        'name'        => $faker->name,
+        'description' => $faker->text(40),
+        'price'       => $faker->randomFloat(3,10,1000),
+        'img'         => $faker->imageUrl(200, 200, 'food', true, 'Faker'),
+    ];
+});
+
+$factory->define(market\Category::class, function (Faker\Generator $faker) {
+    return [
+        'name'        => $faker->name,
+        'description' => $faker->text(40),
     ];
 });

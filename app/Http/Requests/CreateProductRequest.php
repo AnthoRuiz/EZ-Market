@@ -2,7 +2,7 @@
 
 namespace market\Http\Requests;
 
-use market\Http\Requests\Request;
+use Dingo\Api\Http\FormRequest as Request;
 
 class CreateProductRequest extends Request
 {
@@ -13,7 +13,7 @@ class CreateProductRequest extends Request
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,11 @@ class CreateProductRequest extends Request
     public function rules()
     {
         return [
-            //
+            'nombre'=> 'required|max:50',
+            'descripcion'=> 'required|max:255',
+            'categoria'=> 'required|integer',
+            'precio'=> 'required|integer',
+            'imagen'=> 'required|max:255'
         ];
     }
 }

@@ -21,17 +21,14 @@ Route::get('/', function () {
 $api = app('Dingo\Api\Routing\Router');
 $api->version('v1', function ($api) {
 //'middleware => VerifyAccessKey'
-    $api->group(['namespace' => 'Parking\Http\Controllers\Api'], function($api){
+    $api->group(['namespace' => 'market\Http\Controllers\Api'], function($api){
 
         /** Category */
-        $api->get('parkings', 'CategoryController@index');
-        //$api->post('parkings', 'ParkingController@store');
-        //$api->put('parkings', 'ParkingController@update');
-        //$api->delete('parkings', 'ParkingController@destroy');
+        $api->get('categories', 'CategoryController@index');
+        $api->post('category', 'CategoryController@store');
 
         /** Product */
-        //$api->get('tipoVehiculos', 'VehicleTypesController@index');
-        //$api->post('buscarParkingPorVehiculo', 'VehicleTypesController@findParkingByVehicle');
+        $api->get('products', 'ProductController@index');
     });
 
 });

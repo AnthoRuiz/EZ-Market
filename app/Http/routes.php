@@ -30,6 +30,7 @@ $api->version('v1', function ($api) {
         /** Product */
         $api->get('products', 'ProductController@index');
         $api->post('product', 'ProductController@store');
+        $api->get('productsOrderByCategory', 'ProductController@orderByCategory');
     });
 
 });

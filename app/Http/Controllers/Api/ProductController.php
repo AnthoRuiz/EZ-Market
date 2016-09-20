@@ -40,4 +40,9 @@ class ProductController extends Controller
             return $this->response->array(['message' =>'Categoria no Encontrada', 'status' => '404']);
         }
     }
+
+    public function orderByCategory(){
+        $products = Product::orderBy('category_id', 'asc')->get();
+        return $this->response->collection($products, new ProductTransformer());
+    }
 }
